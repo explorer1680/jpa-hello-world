@@ -1,0 +1,1 @@
+It seems that, when you working with hibernate, the configuration for hibernate is needed, and the configuration for the jpa is not needed.
