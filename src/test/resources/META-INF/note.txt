@@ -1,1 +1,23 @@
 It seems that, when you working with hibernate, the configuration for hibernate is needed, and the configuration for the jpa is not needed.
+Note 1:
+You can defined with hibernate properties, and also, you can define jpa properties.
+
+https://antoniogoncalves.org/2009/07/05/jpa-2-0-standard-properties-in-persistence-xml/
+In JPA v1.0, the properties in persistence are not standard. In JPA v2.0 and above, some of the properties are standard.
+
+full list of standard properties list:
+
+https://stackoverflow.com/questions/29822658/where-can-i-get-complete-set-of-javax-persistence-properties
+
+http://download.oracle.com/otn-pub/jcp/persistence-2_1-fr-eval-spec/JavaPersistence.pdf?AuthParam=1496511764_707d3e2bcbdb9932155bb0ef67b07b49
+item:	8.2.1.9
+
+
+Note 2:
+Using
+<exclude-unlisted-classes>true</exclude-unlisted-classes>
+to only scan the class defined by <class>
+
+I think for JPA 2.1, both SE and EE, the default value for <exclude-unlisted-classes> is false.
+So, by default, it will scan the whole project for you, but, in Eclipse, only classes defined in main/java can be scanned.
+That's why you need add <class> for classes in test/java.
