@@ -28,4 +28,17 @@
 
 		</properties>
 	</persistence-unit>
+
+	<persistence-unit name="jpql" transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		<class>personal.jpa.jpql.Employee</class>
+		<properties>
+			<property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.EmbeddedDriver"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:derby:memory:testDB;create=true"/>
+			<property name="javax.persistence.schema-generation.database.action" value="create"/>
+			
+			<property name="hibernate.dialect" value="org.hibernate.dialect.DerbyTenSevenDialect"/>
+			<property name="hibernate.show_sql" value="true"/>
+		</properties>
+	</persistence-unit>
 </persistence>
