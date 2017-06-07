@@ -1,9 +1,7 @@
 package personal.jpa.jpql;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.EntityTransaction;
-import javax.persistence.Persistence;
+import javax.persistence.*;
+import java.util.List;
 
 public class TestRun {
     public static void main(String[] args){
@@ -11,9 +9,14 @@ public class TestRun {
         EntityManager manager = factory.createEntityManager();
         EntityTransaction ts = manager.getTransaction();
         ts.begin();
-        
-        
-        
+
+        Query query = manager.createQuery("SELECT e.ename FROM Employee e");
+
+        List<String> list = query.getResultList();
+
+        for(String e: list){
+            System.out.println("------------" + e);
+        }
         
         
         
