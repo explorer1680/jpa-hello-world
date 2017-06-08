@@ -24,3 +24,9 @@ to only scan the class defined by <class>
 I think for JPA 2.1, both SE and EE, the default value for <exclude-unlisted-classes> is false.
 So, by default, it will scan the whole project for you, but, in Eclipse, only classes defined in main/java can be scanned.
 That's why you need add <class> for classes in test/java.
+
+Note 4:
+you can use javax.persistence.schema-generation.database.action, and javax.persistence.sql-load-script-source to create and load the data.
+or, you can use hibernate.hbm2ddl.auto, and hibernate.hbm2ddl.import_files to create and load the data.
+But, you can't combine the properties from JPA and Hibernate.
+
