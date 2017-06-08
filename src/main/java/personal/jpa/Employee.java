@@ -3,8 +3,10 @@ package personal.jpa;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 
 @Entity
+@NamedQuery(query = "SELECT e FROM Employee e WHERE e.eid = :id", name = "find employee by id")
 public class Employee {
 
     @Id
