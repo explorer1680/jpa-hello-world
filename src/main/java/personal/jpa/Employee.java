@@ -1,4 +1,4 @@
-package personal.jpa.jpql;
+package personal.jpa;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

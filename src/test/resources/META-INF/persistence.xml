@@ -31,12 +31,15 @@
 
 	<persistence-unit name="jpql" transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-		<class>personal.jpa.jpql.Employee</class>
+
+		<class>personal.jpa.Employee</class>
+
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.EmbeddedDriver"/>
 			<property name="javax.persistence.jdbc.url" value="jdbc:derby:memory:testDB;create=true"/>
 			<property name="javax.persistence.schema-generation.database.action" value="create"/>
-			<property name="javax.persistence.sql-load-script-source" value="personal/jpa/jpql/employee.sql"/>
+			<property name="javax.persistence.sql-load-script-source" value="personal/jpa/employee.sql"/>
 			
 			<property name="hibernate.dialect" value="org.hibernate.dialect.DerbyTenSevenDialect"/>
 			<property name="hibernate.show_sql" value="true"/>

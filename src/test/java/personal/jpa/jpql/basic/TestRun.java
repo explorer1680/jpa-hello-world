@@ -1,4 +1,4 @@
-package personal.jpa.jpql;
+package personal.jpa.jpql.basic;
 
 import javax.persistence.*;
 import java.util.List;
@@ -10,15 +10,20 @@ public class TestRun {
         EntityTransaction ts = manager.getTransaction();
         ts.begin();
 
-        Query query = manager.createQuery("SELECT e.ename FROM Employee e");
+        Query query1 = manager.createQuery("SELECT ename FROM Employee");
 
-        List<String> list = query.getResultList();
+        List<String> list = query1.getResultList();
 
         for(String e: list){
             System.out.println("------------" + e);
         }
         
-        
+
+        Query query2 = manager.createQuery("SELECT MAX(salary) FROM Employee");
+
+        Double maxSalary = (Double)query2.getSingleResult();
+
+        System.out.println("Max salary:" + maxSalary);
         
         
         ts.commit();
