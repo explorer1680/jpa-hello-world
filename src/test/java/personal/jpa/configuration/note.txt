@@ -11,9 +11,11 @@ In JPA v1.0, the properties in persistence are not standard. In JPA v2.0 and abo
 full list of standard properties list:
 
 https://stackoverflow.com/questions/29822658/where-can-i-get-complete-set-of-javax-persistence-properties
+The properties listed here are not limited to the <properites> tag. They are also used in <persistence-unit> tag, like: transaction-type
 
 http://download.oracle.com/otn-pub/jcp/persistence-2_1-fr-eval-spec/JavaPersistence.pdf?AuthParam=1496511764_707d3e2bcbdb9932155bb0ef67b07b49
-item:	8.2.1.9
+item:	8.2.1.9, or 9.4
+it seems that JPA has more control on schema-generation.
 
 
 Note 3:
