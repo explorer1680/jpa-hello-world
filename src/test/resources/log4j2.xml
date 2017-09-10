@@ -6,7 +6,7 @@
         </Console>
     </Appenders>
     <Loggers>
-        <Logger name="org.hibernate" level="INFO" additivity="false"> <!-- additivity="false" remove duplicate to root logger -->
+        <Logger name="org.eclipse" level="DEBUG" additivity="false"> <!-- additivity="false" remove duplicate to root logger -->
             <AppenderRef ref="Console" />
         </Logger>
         <Logger name="org.springframework" level="INFO" additivity="false">

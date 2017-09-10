@@ -1,0 +1,9 @@
+In JPA, it is ok to have FK(@ManyToOne) inside of @Embeddable object.
+But, if you using this @Embeddable object as a @EmbeddedId, it may or may not works, it depending on the JPA provider.
+The, Hibernate provider support it, but, the eclipseLink provider not support it.
+
+The error message like:
+
+An embeddable class that is used with an embedded ID specification 
+(attribute [emClass] from the source [class personal.jpa.jpql.component.Example]) can only contain basic mappings. 
+Either remove the non basic mapping or change the embedded ID specification on the source to be embedded.

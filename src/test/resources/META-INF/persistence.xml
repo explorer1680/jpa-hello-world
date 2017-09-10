@@ -3,7 +3,8 @@
 	xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
 
-	<persistence-unit name="configuration" transaction-type="RESOURCE_LOCAL">
+	<persistence-unit name="configuration"
+		transaction-type="RESOURCE_LOCAL">
 
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
@@ -23,7 +24,7 @@
 
 			<!-- <property name="hibernate.hbm2ddl.auto" value="create"/> -->
 			<property name="hibernate.dialect" value="org.hibernate.dialect.DerbyTenSevenDialect" />
-			<property name="hibernate.show_sql" value="true"/>
+			<property name="hibernate.show_sql" value="true" />
 			<property name="hibernate.format_slq" value="true" />
 
 		</properties>
@@ -36,17 +37,40 @@
 
 		<exclude-unlisted-classes>true</exclude-unlisted-classes>
 		<properties>
-			<property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.EmbeddedDriver"/>
-			<property name="javax.persistence.jdbc.url" value="jdbc:derby:memory:testDB;create=true"/>
-			<property name="javax.persistence.schema-generation.database.action" value="create"/>
-			<property name="javax.persistence.sql-load-script-source" value="personal/jpa/employee.sql"/>
-			
-			<property name="hibernate.dialect" value="org.hibernate.dialect.DerbyTenSevenDialect"/>
-			<property name="hibernate.show_sql" value="true"/>
-			
+			<property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.EmbeddedDriver" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:derby:memory:testDB;create=true" />
+			<property name="javax.persistence.schema-generation.database.action"
+				value="create" />
+			<property name="javax.persistence.sql-load-script-source"
+				value="personal/jpa/employee.sql" />
+
+			<property name="hibernate.dialect" value="org.hibernate.dialect.DerbyTenSevenDialect" />
+			<property name="hibernate.show_sql" value="true" />
+
 			<!-- <property name="hibernate.hbm2ddl.auto" value="create"/> -->
 			<!-- <property name="hibernate.hbm2ddl.import_files" value="personal/jpa/jpql/employee.sql"/> -->
-			
+
+		</properties>
+	</persistence-unit>
+	<persistence-unit name="component" transaction-type="RESOURCE_LOCAL">
+		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+
+		<class>personal.jpa.jpql.component.AClass</class>
+		<class>personal.jpa.jpql.component.EmClass</class>
+		<class>personal.jpa.jpql.component.Example</class>
+
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+		<properties>
+			<property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.EmbeddedDriver" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:derby:memory:testDB;create=true" />
+			<property name="javax.persistence.schema-generation.database.action"
+				value="create" />
+			<property name="eclipselink.logging.level.sql" value="FINE" />
+			<property name="eclipselink.logging.parameters" value="true" />
+
+			<property name="hibernate.dialect" value="org.hibernate.dialect.DerbyTenSevenDialect" />
+			<property name="hibernate.show_sql" value="true" />
+
 		</properties>
 	</persistence-unit>
 </persistence>
