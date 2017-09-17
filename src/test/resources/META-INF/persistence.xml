@@ -55,9 +55,9 @@
 	<persistence-unit name="component" transaction-type="RESOURCE_LOCAL">
 		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
 
-		<class>personal.jpa.jpql.component.AClass</class>
-		<class>personal.jpa.jpql.component.EmClass</class>
-		<class>personal.jpa.jpql.component.Example</class>
+		<class>personal.jpa.mapping.component.AClass</class>
+		<class>personal.jpa.mapping.component.EmClass</class>
+		<class>personal.jpa.mapping.component.Example</class>
 
 		<exclude-unlisted-classes>true</exclude-unlisted-classes>
 		<properties>

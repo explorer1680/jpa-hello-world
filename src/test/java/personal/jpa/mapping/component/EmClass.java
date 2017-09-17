@@ -1,4 +1,4 @@
-package personal.jpa.jpql.component;
+package personal.jpa.mapping.component;
 
 import java.io.Serializable;
 

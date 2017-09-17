@@ -1,4 +1,4 @@
-package personal.jpa.jpql.component;
+package personal.jpa.mapping.component;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
