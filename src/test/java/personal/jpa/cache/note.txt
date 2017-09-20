@@ -18,3 +18,5 @@
 
 4. you don't need to configure ehcache.xml, there is default setting from it.
 
+
+https://stackoverflow.com/questions/31668539/jpa-2-level-caching
