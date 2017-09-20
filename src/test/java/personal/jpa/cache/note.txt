@@ -1,0 +1,20 @@
+1. add to persistence.xml
+
+<shared-cache-mode>ENABLE_SELECTIVE</shared-cache-mode>
+
+<property name="hibernate.cache.use_second_level_cache" value="true"/>
+<!--<property name="hibernate.cache.provider_class" value="org.hibernate.cache.SingletonEhCacheProvider"/>-->
+<property name="hibernate.cache.region.factory_class" value="org.hibernate.cache.ehcache.EhCacheRegionFactory"/>
+
+2. add maven:
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-ehcache</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+
+3. add @Cacheable in entity
+
+
+4. you don't need to configure ehcache.xml, there is default setting from it.
+
