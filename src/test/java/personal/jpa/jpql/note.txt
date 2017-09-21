@@ -1,0 +1,11 @@
+if you have a aggregate function in jpql, the db will do the job.
+For example if you have a jpql:
+SELECT SUM(...) FROM ...
+
+the show in hibernate are:
+
+select
+    sum(...) ...
+    ...
+
+
