@@ -1,10 +1,24 @@
 1. add to persistence.xml
 
+
 <shared-cache-mode>ENABLE_SELECTIVE</shared-cache-mode>
 
+
 <property name="hibernate.cache.use_second_level_cache" value="true"/>
+
+
 <!--<property name="hibernate.cache.provider_class" value="org.hibernate.cache.SingletonEhCacheProvider"/>-->
+this property is replace with following property: https://stackoverflow.com/questions/3689868/why-is-ehcacheprovider-deprecated
+
+
 <property name="hibernate.cache.region.factory_class" value="org.hibernate.cache.ehcache.EhCacheRegionFactory"/>
+https://www.journaldev.com/2980/hibernate-ehcache-hibernate-second-level-cache
+
+
+<property name="net.sf.ehcache.configurationResourceName">/myehcache.xml</property>
+net.sf.ehcache.configurationResourceName is used to define the EHCache configuration file location.
+It’s an optional parameter and if it’s not present EHCache will try to locate ehcache.xml file in the application classpath.
+
 
 2. add maven:
 		<dependency>
@@ -20,3 +34,7 @@
 
 
 https://stackoverflow.com/questions/31668539/jpa-2-level-caching
+
+
+5. It seems, that EHCache provide function to let you have more control on how it works, but only hibernate can do it, jpa not.
+
