@@ -1,0 +1,4 @@
+Normally, the named query is defined with @Entity.
+
+Actually, the named query can be place to any @Entity, no only the entity it will used.
+
