@@ -2,3 +2,4 @@ Normally, the named query is defined with @Entity.
 
 Actually, the named query can be place to any @Entity, no only the entity it will used.
 
+https://stackoverflow.com/questions/26838032/can-we-define-all-the-named-queries-at-one-place-like-some-property-file-instead
