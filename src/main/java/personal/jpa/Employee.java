@@ -1,16 +1,13 @@
 package personal.jpa;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.NamedQuery;
+import javax.persistence.*;
 
 @Entity
 @NamedQuery(query = "SELECT e FROM Employee e WHERE e.eid = :id", name = "find employee by id")
 public class Employee {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer eid;
 
     private String ename;

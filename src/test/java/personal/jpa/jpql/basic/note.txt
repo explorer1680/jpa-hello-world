@@ -1,0 +1,6 @@
+It seems that in Intellij IDEA, the
+@GeneratedValue, @GeneratedValue(strategy = GenerationType.AUTO)
+will be Sequence, where in Eclipse, it is Identity.
+
+Note, it is not because of Hibernate, JPA, or EclipseLink
+It is because of IDE!

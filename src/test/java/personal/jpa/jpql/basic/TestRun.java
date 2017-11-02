@@ -23,7 +23,7 @@ public class TestRun {
 
         Double maxSalary = (Double)query2.getSingleResult();
 
-        System.out.println("Max salary:" + maxSalary);
+        System.out.println("Max salary: " + maxSalary);
         
         
         ts.commit();
