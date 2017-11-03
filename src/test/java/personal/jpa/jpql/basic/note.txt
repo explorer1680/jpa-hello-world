@@ -4,3 +4,14 @@ will be Sequence, where in Eclipse, it is Identity.
 
 Note, it is not because of Hibernate, JPA, or EclipseLink
 It is because of IDE!
+
+Note, When I try again, it seems works again. It is looks wired.
+
+The phenomenon:
+When there is only @GeneratedValue
+you don't have each ename print out.
+and you have "Max salary: null"
+
+When using:
+@GeneratedValue(strategy = GenerationType.IDENTITY)
+it show the ename and show "Max salary: 40000.0"
