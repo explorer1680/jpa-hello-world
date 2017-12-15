@@ -1,2 +1,6 @@
 https://stackoverflow.com/questions/21381943/how-to-configure-spring-without-persistence-xml
 http://howtodoinjava.com/jpa/configure-jpa-without-persistence-xml/
+
+it seems that when you using spring with JPA, the persistence.xml in META-INF is not used.
+you define everything inside of spring's configuration files.
+
