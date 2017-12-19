@@ -9,3 +9,37 @@ select
     ...
 
 
+In JPA, you have @OneToMany and @ManyToOne annotation used in classes.
+they are both used in object navigation.
+But in sql or jpql, only @ManyToOne relationship.
+
+For example:
+
+class Parent {
+    @OneToMany
+    Child children;
+}
+
+class Child {
+    @ManyToOne
+    Parent parent;
+}
+
+in navigation, you can use parent.children, or child.parent.
+
+in jpql:
+
+you can only use:
+
+SELECT p FROM Parent p, Child c
+WHERE p.firstName = 'ABC'
+AND c.parent = p
+AND c.age > 10;
+
+
+
+You can't use:
+
+SELECT p FROM Parent p
+WHERE p.firstName = 'ABC'
+AND p.children.age >10;
