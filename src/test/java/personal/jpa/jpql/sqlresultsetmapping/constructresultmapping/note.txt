@@ -1,0 +1,38 @@
+example:
+https://www.thoughts-on-java.org/result-set-mapping-basics/
+
+1. When using Native Query, you can't using mapping entities, for example, you have a entity "Person" map to table "a_person", then
+you can using
+SELECT * FROM Person p.
+
+and in our case,
+
+you can't using
+SELECT a.name as authorName, b.name as bookName FROM Author a, Book b WHERE b.author = a
+you have to using:
+SELECT a.name as authorName, b.name as bookName FROM Author a, Book b WHERE b.author_id = a.id
+the generated sql is:
+Hibernate: SELECT a.name as authorName, b.name as bookName FROM Author a, Book b WHERE b.author = a.id
+it is exactly same as he sql we write, and you can't use:
+SELECT a.name, b.name FROM Author a, Book b WHERE b.author_id = a.id
+it will complain about the you have duplicate 'name' in query.
+
+When using normal query, the
+SELECT a.name as authorName, b.name as bookName FROM Author a, Book b WHERE b.author = a
+is correct.
+the generated sql is:
+Hibernate: select author0_.name as col_0_0_, book1_.name as col_1_0_ from Author author0_, Book book1_ where book1_.author=author0_.id
+
+2. you have to create the constructor for BookValue to use it.
+the order and type of the parameters of constructor has be same as:
+                        @ColumnResult(name = "authorName"),
+                        @ColumnResult(name = "bookName")
+
+3. the order and name of the native query:
+SELECT a.name as authorName, b.name as bookName ...
+has to be same as:
+                        @ColumnResult(name = "authorName"),
+                        @ColumnResult(name = "bookName")
+
+4. to use manager.createNativeQuery(String s, Class clz).
+example of BookAuthor.class in this example, the clz has to have exactly same parameter as in sql.

@@ -80,11 +80,11 @@
 		</dependency>
 
 		<!-- eclipse link -->
-		<dependency>
-			<groupId>org.eclipse.persistence</groupId>
-			<artifactId>eclipselink</artifactId>
-			<version>2.5.0</version>
-		</dependency>
+		<!--<dependency>-->
+			<!--<groupId>org.eclipse.persistence</groupId>-->
+			<!--<artifactId>eclipselink</artifactId>-->
+			<!--<version>2.5.0</version>-->
+		<!--</dependency>-->
 
 		<!-- to make @NotNull works, you have to add a validator -->
 		<dependency>
