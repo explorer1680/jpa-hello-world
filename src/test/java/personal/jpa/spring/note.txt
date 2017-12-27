@@ -4,3 +4,13 @@ http://howtodoinjava.com/jpa/configure-jpa-without-persistence-xml/
 it seems that when you using spring with JPA, the persistence.xml in META-INF is not used.
 you define everything inside of spring's configuration files.
 
+Please Note:
+Hibernate has settings about current_session_context_class and transaction.factory_class.
+It has getCurrentSession() method to deal with context session.
+But, JPA don't have these things, if you want to use jpa with spring, and using transactional control, using
+@PersistenceContext.
+
+for example using @PersistenceContext, see
+"Implementing DAOs based on plain JPA"
+in spring tech doc.
+
