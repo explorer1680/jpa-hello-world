@@ -14,6 +14,7 @@ import javax.persistence.*;
         )
 )
 @Entity
+//@Table(name="book_2")
 public class Book {
 
     @Id
@@ -22,7 +23,7 @@ public class Book {
     private String name;
 
     @ManyToOne
-    @JoinColumn(name="author")
+    @JoinColumn(name="author_id")
     private Author author;
 
     public Book() {

@@ -65,7 +65,7 @@ public class TestRun {
 
 //        Query q = manager2.createNativeQauthor_id"BookAuthorMapping" );
 
-        Query q2 = manager2.createNativeQuery("SELECT a.name as authorName, b.name as bookName FROM Author a, Book b WHERE b.author = a.id", "BookAuthorMapping" );
+        Query q2 = manager2.createNativeQuery("SELECT a.name as authorName, b.name as bookName FROM Author a, Book b WHERE b.author_id = a.id", "BookAuthorMapping" );
 
 
         List<BookValue> resultList2 = q2.getResultList();
@@ -75,7 +75,7 @@ public class TestRun {
         }
 
 
-        Query q3 = manager2.createNativeQuery("SELECT a.name as authorName, b.name as bookName, b.id FROM Author a, Book b WHERE b.author = a.id", BookAuthor.class );
+        Query q3 = manager2.createNativeQuery("SELECT a.name as authorName, b.name as bookName, b.id FROM Author a, Book b WHERE b.author_id = a.id", BookAuthor.class );
 
         List<BookAuthor> resultList3 = q3.getResultList();
         for(BookAuthor o: resultList3){
