@@ -1,0 +1,11 @@
+https://stackoverflow.com/questions/1557085/setting-a-parameter-as-a-list-for-an-in-expression
+
+according to above link:
+"I found the answer, providing a list as a parameter is not supported in JPA 1.0; however, it is supported in JPA 2.0."
+
+you have query:
+"... AND c.repCode IN (:repCodes)"
+and you have:
+List<String> repCodeList;
+you can use:
+query.setParameter("repCodes", repCodeList);
