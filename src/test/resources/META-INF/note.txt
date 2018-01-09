@@ -1,0 +1,5 @@
+It seems, in eclipse, if you want to using META-INF.persistence.xml in test resources, you have to using:
+<exclude-unlisted-classes>
+and list mapped class in <class>
+if you put META-INF.persistence.xml in main resources, you don't have to do it.
+
