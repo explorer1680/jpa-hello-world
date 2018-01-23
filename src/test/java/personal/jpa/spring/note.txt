@@ -2,7 +2,16 @@ https://stackoverflow.com/questions/21381943/how-to-configure-spring-without-per
 http://howtodoinjava.com/jpa/configure-jpa-without-persistence-xml/
 
 it seems that when you using spring with JPA, the persistence.xml in META-INF is not used.
-you define everything inside of spring's configuration files.
+you define everything inside of spring's configuration files.(not correct)
+
+you can using spring with persistence.xml
+if you have only one persistence-unit, it will use it.
+If you have more than one persistence-unit, it will looking for a persistence-unit with name "default";
+If you don't have "default" persistence-unit, you have to specify by property:
+    <property name="persistenceUnitName" value="..."/>
+https://www.boraji.com/spring-4-hibernate-5-jpa-2-integration-example
+
+If you don't want to use persistence.xml, see the above 2 link for configuration.
 
 Please Note:
 Hibernate has settings about current_session_context_class and transaction.factory_class.
