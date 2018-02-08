@@ -32,3 +32,8 @@ you can use javax.persistence.schema-generation.database.action, and javax.persi
 or, you can use hibernate.hbm2ddl.auto, and hibernate.hbm2ddl.import_files to create and load the data.
 But, you can't combine the properties from JPA and Hibernate.
 
+Note 5:
+you can't using hibernate.cfg.xml and persistence.xml together.
+in spring, you can reference a hibernate.cfg.xml inside of LocalSessionFactoryBean,
+you can reference a persistence-unit inside of EntityManagerFactoryBean,
+but, you can't reference a hibernate.cfg.xml inside of a persistence.xml.
