@@ -4,6 +4,10 @@ If you don't want to return the collection at all,
 1. you can query the basic field, and return the Entity by yourself.
 2. you can manually set the collection to null.
     But, if you have "orphanRemoval=true", it will not work.
+    (I think the above suggestion is not working,
+    if you set to null when it is in persistence stage, it will remove collection in database.
+    if you set to null when it is detached, it will still complain when you have "orphanRemoval=true",
+    it seems that the "orphanRemoval=true" will change the java Set or List implementation)
 
 
 What is Entity Graph in the JPA2.1?
