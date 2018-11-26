@@ -1,2 +1,6 @@
 jpa has a find method, it similar to hibernate get method.
 jpa has a getReference method, it similar to hibernate load method.
+
+https://vladmihalcea.com/jpa-persist-and-merge/
+in jpa, use persist only for new entity.
+use merge only for detached entity.
