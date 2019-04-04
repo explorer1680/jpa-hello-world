@@ -3,3 +3,7 @@
 /.classpath
 /derby.log
 /.project
+
+
+.idea
+*.iml
