@@ -16,8 +16,10 @@ If you don't want to use persistence.xml, see the above 2 link for configuration
 Please Note:
 Hibernate has settings about current_session_context_class and transaction.factory_class.
 It has getCurrentSession() method to deal with context session.
-But, JPA don't have these things, if you want to use jpa with spring, and using transactional control, using
-@PersistenceContext.
+But, JPA don't have these things, it has @PersistenceContext, @PersistenceUnit, there annotation are from java, not spring.
+it seems that @PersistenceUnit is for EntityManagerFactory, @PersistenceContext is for EntityManager.
+
+If you want to use jpa with spring, and using transactional control, you should also use them.
 
 for example using @PersistenceContext, see
 "Implementing DAOs based on plain JPA"
